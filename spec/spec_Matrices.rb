@@ -52,4 +52,29 @@ describe Matriz do
 		end
 	end
 	
+	# Comprobacion de la multiplicacion
+	describe "Comprobamos la multiplicacion" do
+		it " Multiplicacion de dos matrices" do
+			@aux = Matriz.new(2,2,[[69,78],[42,58]])
+			@aux2 = @m3.por(@m4)
+			@aux2.to_s.should eq(@aux.to_s)
+		end
+		it " Multiplicacion por un escalar" do
+			@aux = Matriz.new(3,2,[[2,6],[4,8],[12,10]])
+			@aux2 = @m4*(2)
+			@aux2.to_s.should eq(@aux.to_s)
+		end
+	end
+	
+	# Comprobacion de la traspuesta
+	describe "Comprobamos la funciones trasponer y vectorizar" do
+		it "Traspuesta de una matriz" do
+			@aux = Matriz.new(3,3,[[1,6,2],[2,5,5],[4,8,3]])
+			@m2.trasponer.to_s.should eq(@aux.to_s)
+		end
+		it "Comprovamos la funcion vectorizar" do
+			@aux = Array.new([1,2,4,6,5,8,2,5,3])
+			@m2.vectorizar.should eq(@aux)
+		end
+	end
 end
