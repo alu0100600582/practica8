@@ -31,4 +31,25 @@ describe Matriz do
 		end
 	end
 	
+	# Comprobacion de que se convierte bien la matriz a un string
+	describe "Comprobamos el metodo de conversion a string\n" do
+		it "\n" do
+			@m1.to_s.should eq("1\t2\t\n3\t4\t\n")
+		end
+	end
+	
+	# Comprobacion de las operaciones de suma y resta de matrices
+	describe "Comprobamos la suma y resta de matrices\n" do
+		it " - Suma\n" do
+			@aux = Matriz.new(2,2,[[6,5],[5,7]])
+			@aux2 = @m1+@m5
+			@aux2.to_s.should eq(@aux.to_s)
+		end
+		it " - Resta\n" do
+			@aux = Matriz.new(2,2,[[4,1],[-1,-1]])
+			@aux2 = @m5-@m1
+			@aux2.to_s.should eq(@aux.to_s)
+		end
+	end
+	
 end
