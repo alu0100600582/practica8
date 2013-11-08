@@ -76,6 +76,7 @@ describe Matriz do
 			@aux = Array.new([1,2,4,6,5,8,2,5,3])
 			@m2.vectorizar.should eq(@aux)
 		end
+		
 	end
 end
 #asdfasd
