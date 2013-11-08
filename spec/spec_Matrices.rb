@@ -79,11 +79,3 @@ describe Matriz do
 		
 	end
 end
-#asdfasd
-
-#asdsad
-
-
-
-
-#test
