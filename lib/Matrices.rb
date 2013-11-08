@@ -69,23 +69,6 @@ class Matriz
 		Matriz.new(@nfil, @ncol, elemento)
 	end
 	
-	#restar dos matrices
-	def -(other)
-		if ((@nfil != other.nfil) || (@ncol != other.ncol))
-			puts "No se pueden restar las matrices"
-		else
-			elemento = Array.new(0)
-			for i in 0...filas do
-				fila = Array.new(0)
-				for j in 0...colum do
-					fila << pos[i][j] - other.pos[i][j]
-				end
-				elemento << fila
-			end
-		end
-		Matriz.new(@nfil, @ncol, elemento)
-	end
-	
 	# multiplicar dos matrices
 	def por(other)
 		if ((@nfil != other.ncol) || (@ncol != other.nfil))
@@ -133,6 +116,16 @@ class Matriz
 		Matriz.new(@ncol, @nfil, elemento)
 	end
 	
+	# convertir la matriz en un vector
+        def vectorizar
+                aux = Array.new(0)
+                for i in 0...colum do
+                        for j in 0...filas do
+                                aux << pos[i][j]
+                        end
+                end
+                Array.new(aux)
+        end
 	
 	
 end
@@ -142,4 +135,4 @@ if __FILE__ == $0
 	m2 = Matriz.new(2,2,[[2,4],[3,2]])
 	puts m1+m2
 end
-
+#test
